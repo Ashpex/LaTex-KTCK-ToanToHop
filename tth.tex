@@ -119,7 +119,34 @@
     \item Từ bậc \(n - 2\)
 \end{itemize}
 
-- Với mỗi cách, ta lần lượt có \(n-1\) và \(n - 2\) cách
+- Với mỗi cách, ta lần lượt có \(a_{n-1}\) và \(a_{n - 2}\) cách. \\
+- Như vậy, ta được dãy Fibonacci như sau:
+
+\begin{equation*}
+    a_{n} = a_{n-1} + a_{n-2}
+\end{equation*}
+
+- Để bước lên bậc thang thứ 1, ta có 1 cách \(\Rightarrow a_{1} = 1\) \\
+- Để bước lên bậc thang thứ 2, ta có 2 cách \(\Rightarrow a_{2} = 2\) \\
+- Mà, ta lại có \(a_{2} = a_{0} + a_{1} \Leftrightarrow a_{0} = a_{2} - a_{1} = 2 - 1 = 1\). Từ đó suy ra: \\
+
+
+    \[
+    \begin{cases}
+        a_{n} & = a_{n-1} + a_{n-2} \\             
+        a_{0} & = a_{1} = 1; a_{2} = 2   
+    \end{cases}
+    \]
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(0) = 1, a(1) = 1, a(n) = a(n-1) + a(n-2)}, a(n)): simplify(f)
+\end{verbatim}
+
+\begin{equation*}
+    a_{n} = \left(\frac{1}{2} - \frac{\sqrt{5}}{10}\right)\left(\frac{-\sqrt{5}}{2} + \frac{1}{2}\right)^{n} + \left(\frac{1}{2} + \frac{\sqrt{5}}{10}\right)\left(\frac{\sqrt{5}}{2} + \frac{1}{2}\right)^{n}
+\end{equation*}
 
 \subsection{Câu B: Chia mặt phẳng}
 \begin{tcolorbox}
