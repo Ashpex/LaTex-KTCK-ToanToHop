@@ -111,7 +111,7 @@
     \textbf{Đề bài:} Một cầu thang có \(n\) bậc, mỗi lần bước có thể bước lên 1 bậc hay 2 bậc. Có bao nhiêu cách đi hết cầu thang này? (đây chính là dãy Fibonaxi)
 \end{tcolorbox}
 
-- Gọi \(a_{n}\) là số cách bước lên cầu thang có \(n\) bậc.
+- Gọi \(a_{n}\) là số cách bước lên cầu thang có \(n\) bậc. \\
 - Do một lần có thể bước lên 1 hoặc 2 bậc nên ta có 2 cách để bước lên bậc thang thứ \(n\):
 
 \begin{itemize}
@@ -123,7 +123,7 @@
 \begin{center}
     {\includegraphics[width=16cm]{ex1a.png}}
 \end{center}
-- Như vậy, ta được dãy Fibonacci như sau:
+- Teho nguyên lý cộng, ta có:
 
 \begin{equation*}
     a_{n} = a_{n-1} + a_{n-2}
@@ -159,6 +159,45 @@
 \begin{center}
     {\includegraphics[width=8cm]{1b.png}}
 \end{center}
+
+- Gọi \(a_{n}\) là số mặt phẳng tối đa có thể có khi chia mặt phẳng bởi \(n\) đường thẳng. \\
+- Đầu tiên, chúng ta khảo sát số miền tối đa có thể có đối với các giá trị \(n\) đường thẳng ban đầu như sau:
+
+\begin{itemize}
+    \item Với 0 đường đẳng (\(n = 0\)), ta thu được 1 mặt phẳng \(\Rightarrow a_{0} = 1\)
+    \item Với 1 đường đẳng (\(n = 1\)), ta thu được 2 mặt phẳng \(\Rightarrow a_{1} = 2\)
+    \item Với 2 đường thằng (\(n = 2\)), ta thu được 4 mặt phẳng \(\Rightarrow a_{2} = 4\)
+    \item Với 3 đường thẳng (\(n = 3\)), ta thu được 7 mặt phẳng \(\Rightarrow a_{3} = 7\)
+\end{itemize}
+
+\begin{center}
+    {\includegraphics[width=16cm]{ex1b.png}}
+\end{center}
+
+- Như vậy, ta được dãy như sau:
+
+\begin{equation*}
+    a_{n} = a_{n - 1} + a_{n}
+\end{equation*}
+
+- Từ đó suy ra:
+
+\[
+    \begin{cases}
+        a_{n} & = a_{n - 1} + n \\             
+        a_{0} & = 1; a_{1} = 2   
+    \end{cases}
+    \]
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(0) = 1, a(1) = 2, a(n) = a(n-1) + n}, a(n)): simplify(f)
+\end{verbatim}
+
+\begin{equation*}
+    a_{n} = \frac{1}{2}n^{2} + \frac{1}{2}n + 1
+\end{equation*}
 
 \subsection{Câu C: Tháp Hà Nội}
 \begin{tcolorbox}
