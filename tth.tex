@@ -123,7 +123,7 @@
 \begin{center}
     {\includegraphics[width=16cm]{ex1a.png}}
 \end{center}
-- Teho nguyên lý cộng, ta có:
+- Theo nguyên lý cộng, ta có:
 
 \begin{equation*}
     a_{n} = a_{n-1} + a_{n-2}
@@ -208,6 +208,48 @@
     {\includegraphics[width=8cm]{toh.png}}
 \end{center}
 
+- Gọi \(a_{n}\) là số lần tối thiểu để chuyển tất cả \(n\) đĩa này sang cột khác sao cho thỏa mãn quy tắc: đĩa có bán kính nhỏ hơn luôn nằm ở trên. \\
+- Để chuyển \(n\) đĩa từ cột 1 sang cột 2:
+\begin{itemize}
+    \item Chuyển \(n\) đĩa từ cột 1 sang cột 3 \(\Rightarrow \text{Có } a_{n-1} \text{ cách.}\)
+    \item Chuyển đĩa lớn nhất từ cột 1 sang cột 2 \(\Rightarrow \text{Có } 1 \text{ cách.}\)
+    \item Chuyển các đĩa còn lại từ cột 3 về cột 1 \(\Rightarrow \text{Có } a_{n-1} \text{ cách.}\)
+\end{itemize} 
+
+- Theo nguyên lý cộng, ta có:
+
+\begin{equation*}
+    a_{n} = 2a_{n-1} + 1
+\end{equation*}
+
+- Từ đó suy ra:
+
+\[
+    \begin{cases}
+        a_{n} & = 2a_{n - 1} + 1 \\             
+        a_{1} & = 1 
+    \end{cases}
+    \]
+
+%- Mặc khác, ta lại có trường hợp chuyển 1 đĩa như sau:
+
+%\begin{align*}
+%    a_{1} & = 1 \\
+%    \Leftrightarrow a_{1} & = 2a_{0} + 1 \\
+%    \Leftrightarrow a_{0} & = 0 \\
+%    \Rightarrow a_{n} & = 2^{n} - 1
+%\end{align*}
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(1) = 1, a(n) = 2a(n-1) + 1}, a(n)): simplify(f)
+\end{verbatim}
+
+\begin{equation*}
+    a_{n} = 2^{n} - 1
+\end{equation*}
+
 \section{Bài 2}
 
 \subsection{Câu A: Lãi suất ngân hàng}
@@ -216,6 +258,11 @@
     I)  Gửi vào 1000\$ và lấy ra sau \(n\) năm. \\
     II) Gửi vào 100\$ mỗi cuối năm.
 \end{tcolorbox}
+
+\subsubsection{Gửi vào 1000\$ và lấy ra sau \(n\) năm}
+
+
+\subsubsection{Gửi vào 100\$ và lấy ra sau \(n\) năm}
 
 \subsection{Câu B}
 \begin{tcolorbox}
