@@ -261,8 +261,69 @@
 
 \subsubsection{Gửi vào 1000\$ và lấy ra sau \(n\) năm}
 
+- Gọi \(a_{n}\) là số tiền rút ra sau \(n\) năm. \\
+- Ta có, nếu một tài khoản có \(x\) \$ vào đầu năm, thì đến cuối năm (hay đầu năm sau), số tiền trong tài khoản đó là: \(x\) \$ cộng với số tiền lãi (giả sử người dùng không gửi thêm hoặc rút tiền từ ngân hàng trong suốt một năm đó). \\
+- Từ đó, ta có mối quan hệ như sau:
 
-\subsubsection{Gửi vào 100\$ và lấy ra sau \(n\) năm}
+\begin{align*}
+    a_{n}   & = a_{n-1} + 0.04.a_{n-1} \\
+            & = 1.04.a_{n-1}
+\end{align*}
+
+
+- Với số tiền ban đầu là 1000 \$, ta có hệ thức đệ quy:
+
+\[
+    \begin{cases}
+        a_{n} & = 1.04.a_{n-1} \\             
+        a_{0} & = 1000
+    \end{cases}
+    \]
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(0) = 1000, a(n) = 1.04*a(n-1)}, a(n)): simplify(f)
+\end{verbatim}
+
+\begin{equation*}
+    a_{n} = 1000.26^{n}.25^{-n}
+\end{equation*}
+
+\subsubsection{Gửi vào 100\$ và lấy ra mỗi cuối năm}
+
+- Gọi \(a_{n}\) là số tiền lấy ra sau \(n\) năm. \\
+- Tương tự, ta có:
+
+\begin{align*}
+    a_{n}   & = a_{n-1} + 0.04.a_{n-1} + 100 \\
+            & = 1.04.a_{n-1} + 100
+\end{align*}
+
+- Do cuối năm đầu tiên khách hàng mới gửi 100 \$ nên năm thứ hai ta mới có tiền lãi:
+
+\begin{equation*}
+    \Rightarrow a_{0} = 0
+\end{equation*}
+
+- Ta có hệ thức đệ quy:
+
+\[
+    \begin{cases}
+        a_{n} & = 1.04.a_{n-1} + 100 \\             
+        a_{0} & = 0
+    \end{cases} 
+    \]
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(0) = 0, a(n) = 1.04*a(n-1) + 100}, a(n)): simplify(f)
+\end{verbatim}
+
+\begin{equation*}
+    a_{n} = -2500 + 2500.26^{n}.25^{-n}
+\end{equation*}
 
 \subsection{Câu B}
 \begin{tcolorbox}
