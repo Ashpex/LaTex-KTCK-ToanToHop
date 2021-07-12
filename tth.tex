@@ -22,6 +22,8 @@
 \usepackage{circuitikz}
 \usepackage{tikz}
 \usepackage{bm}
+\usepackage{spverbatim}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FORMATTING
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,9 +356,9 @@
 
 - Sử dụng Maple để giải hệ thức đệ quy, ta được:
 
-\begin{verbatim}
+\begin{lstlisting}[breaklines]
     f := rsolve({a(0) = 1, a(1) = 1, a(2) = 1, a(3) = 1, a(4) = 1, a(5) = 2, a(6) = 2, a(7) = 2, a(8) = 2, a(9) = 2, a(10) = 3, a(n) = a(n-1) + a(n-5) + a(n-10)}, a(n)): simplify(f)
-\end{verbatim}
+\end{lstlisting}
 
 
 
@@ -369,7 +371,50 @@
     \textbf{Đề bài:} Tìm quan hệ đệ quy cho \(a_{n}\), số chuỗi tam phân có độ dài \(n\) mà không xuất hiện chuỗi con “012”.
 \end{tcolorbox}
 
-- Gọi \(a_{n}\) là số chuỗi tam phân có độ dài \(n\) mà không xuất hiện chuỗi con "012" \\
+- Gọi \(a_{n}\) là số chuỗi tam phân có độ dài \(n\) mà không xuất hiện chuỗi con "012". \\
+- Ta xét 3 trường hợp sau:
+\begin{itemize}
+    \item \textbf{Trường hợp 1:} Nếu chữ số đầu tiên trong dãy tam phân là \textbf{1} 
+        \SubItem{Số chuỗi còn lại là các tổ hợp có \(n-1\) kí tự thỏa điều kiện chữ số đầu tiên là 1 \(\Rightarrow\) Có \(a_{n-1}\) cách.}
+    \item \textbf{Trường hợp 2:} Nếu chữ số đầu tiên trong dãy tam phân là \textbf{2}.
+        \SubItem{Số chuỗi còn lại là các tổ hợp có \(n-1\) kí tự thỏa điều kiện chữ số đầu tiên là 2 \(\Rightarrow\) Có \(a_{n-1}\) cách.}
+    \item \textbf{Trường hợp 3:} Nếu chữ số đầu tiên trong dãy tam phân là \textbf{0}
+        \SubItem{Lý luận tương tự, ta cũng có \(a_{n-1}\) cách.} 
+        \SubItem{Tuy nhiên, sẽ có trường hợp dãy số sẽ bắt đầu bằng chuỗi "012". Để loại các trường hợp này, ta có \(a_{n-3}\) cách. }
+\end{itemize}
+
+- Theo nguyên lý cộng, ta có:
+\begin{align*}
+    a_{n}   & = a_{n-1} + .a_{n-1} + a_{n-1} + a_{n-3} \\
+            & = 3.a_{n-1} + a_{n-3}
+\end{align*}
+
+- Mà ta lại có:
+
+\begin{itemize}
+    \item \(a_{1} = 3^{1}\) vì có 1 vị trí, mỗi vị trí có 3 cách chọn.
+    \item \(a_{2} = 3^{2} = 9\) vì có 2 vị trí, mỗi vị trí có 3 cách chọn.
+    \item \(a_{3} = 3^{3} - 1 = 26\) vì có 3 vị trí, mỗi vị trí có 3 cách chọn và loại đi trường hợp có chuỗi "012".
+\end{itemize}
+
+- Vì vậy:
+
+\[
+    \begin{cases}
+        a_{n} & = 3.a_{n-1} + a_{n-3}\\             
+        a_{1} & = 1 \\
+        a_{2} & = 9 \\
+        a_{3} & = 26 \\
+    \end{cases} 
+    \]
+
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{lstlisting}[breaklines]
+    f := rsolve({a(1) = 1, a(2) = 9, a(3) = 26, a(n) = 3a(n-1) + a(n-3)}, a(n)): simplify(f)
+\end{lstlisting}
+
 
 \section{Bài 3}
 \subparagraph {Sử dụng maple để giải quyết 2 bài toán sau đây:}
