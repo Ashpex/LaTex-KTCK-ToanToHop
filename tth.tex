@@ -434,9 +434,9 @@
 > f := sum(r*(r+1)*(r+2)*(r+3), r=1..n): simplify(f)
 \end{verbatim}
 
-\begin{align*}
+\begin{equation*}
     \sum_{r=1}^{n}r(r + 1)(r + 2)(r + 3) = \frac{1}{5}n^{5} + 2n^{4} + 7n^{3} + 10n^{2} + \frac{24}{5}n
-\end{align*}
+\end{equation*}
 
 
 
@@ -444,6 +444,43 @@
 \begin{tcolorbox}
     \textbf{Đề bài:} Tìm số các phân hoạch của số nguyên 10 dựa vào hàm sinh.
 \end{tcolorbox}
+
+- Gọi \(e_{k}\) là số các số nguyên \(k\) xuất hiện trong một phân hoạch của \(r\). Ta có: \\
+\begin{equation*}
+    1e_{1} + 2e_{2} + 3e_{3} +...+ ke_{k} + ....+re_{r} = r
+\end{equation*}
+
+- Như vậy số phân hoạch của 10 là số các nghiệm nguyên không âm của phương trình trên. Ta sẽ xây dựng các nhân tử đa thức sao cho sau khi nhân các đa thức đó lại với nhau, ta được các hạng tử có dạng \(x^{e_{1}}x^{2e_{2}}x^{3e_{3}}...x^{ke_{k}}...\)
+\begin{equation*}
+    1e_{1} + 2e_{2} + 3e_{3} +...+ 10e_{10} = 10
+\end{equation*}
+
+\begin{itemize}
+    \item Đối với \(e_{1}\) có nhân tử là: \(1 + x + x^{2} + ... + x^{n} + ...\)
+    \item Đối với \(e_{2}\) có nhân tử là: \(1 + x^{2} + x^{4} + ... + x^{2n} + ...\)
+    \\ ...........................................
+    \item Đối với \(e_{10}\) có nhân tử là: \(1 + x^{10} + x^{20} + ... + x^{10n} + ...\)
+\end{itemize}
+- Gọi \(a_{k}\) là số phân hoạch của \(r\). Hàm sinh cho dãy \(\{a_{r}\}_{0 \leq r \leq 10}\) là:
+
+\begin{align*}
+    G(x) & = (1 + x + x^{2} + ...)(1 + x^{2} + x^{4} + ....)....(1+x^{10}+x^{20}+....) \\
+         & = \frac{1}{(1-x)(1-x^{2})(1-x^{3})...(1-x^{10})}  
+\end{align*}
+
+- Số phân hoạch của 10 là hệ số của \(x^{10}\) trong hàm sinh \(G(x)\). \\
+- Sử dụng Maple, ta có:
+\begin{verbatim}
+> g := 1/product(1-x^i,i=1.10)
+> coeff(series(g,x,11),x,10)
+\end{verbatim}
+
+\begin{equation*}
+    g := \frac{1}{1-x^{1.10}}
+\end{equation*}
+\begin{equation*}
+    42
+\end{equation*}
 
 \section{Bài 4}
 \begin{tcolorbox}
