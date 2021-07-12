@@ -363,7 +363,7 @@
 
 
 \begin{equation*}
-    \left(\sum_{\_R = RootOf(\_Z^{10} + \_Z^{5} + \_Z-1)}\frac{(\_R^{9} + \_R^{8} + \_R{7} + \_R^{6} - 2\_R^{5} - 2\_R + 1)(\frac{1}{\_R})^{n}}{10\_R^{10 + 5\_R^{5} + \_R}}\right)
+    \left(\sum_{\_R = RootOf(\_Z^{10} + \_Z^{5} + \_Z-1)}\frac{(\_R^{9} + \_R^{8} + \_R^{7} + \_R^{6} - 2\_R^{5} - 2\_R + 1)(\frac{1}{\_R})^{n}}{10\_R^{10} + 5\_R^{5} + \_R}\right)
 \end{equation*}
 
 \subsection{Câu C: Dãy con bị cấm}
@@ -411,10 +411,14 @@
 
 - Sử dụng Maple để giải hệ thức đệ quy, ta được:
 
+
 \begin{lstlisting}[breaklines]
     f := rsolve({a(1) = 1, a(2) = 9, a(3) = 26, a(n) = 3a(n-1) + a(n-3)}, a(n)): simplify(f)
 \end{lstlisting}
 
+\begin{equation*}
+    \frac{\left(\sum_{\_R = RootOf(\_Z^{3} + 3\_Z - 1)}\frac{(6\_R^{2} + 4\_R  - 1)(\frac{1}{\_R})^{n}}{(\_R^{2} + 1) - \_R}\right)}{3}
+\end{equation*}
 
 \section{Bài 3}
 \subparagraph {Sử dụng maple để giải quyết 2 bài toán sau đây:}
@@ -423,6 +427,18 @@
 \begin{tcolorbox}
     \textbf{Đề bài:} Tính tổng \(1.2.3.4 + 2.3.4.5 + ....... + n.(n+1).(n+2).(n+3)\)
 \end{tcolorbox}
+
+- Sử dụng Maple, ta có:
+
+\begin{verbatim}
+> f := sum(r*(r+1)*(r+2)*(r+3), r=1..n): simplify(f)
+\end{verbatim}
+
+\begin{align*}
+    \sum_{r=1}^{n}r(r + 1)(r + 2)(r + 3) = \frac{1}{5}n^{5} + 2n^{4} + 7n^{3} + 10n^{2} + \frac{24}{5}n
+\end{align*}
+
+
 
 \subsection{Câu B}
 \begin{tcolorbox}

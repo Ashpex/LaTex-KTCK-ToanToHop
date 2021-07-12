@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.7.6)  13 JUL 2021 01:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.7.6)  13 JUL 2021 02:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -904,23 +904,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 264.
 
 [5] [6] [7]
-<./images//6.png, id=180, 428.35031pt x 320.69812pt>
+<./images//6.png, id=182, 428.35031pt x 320.69812pt>
 File: ./images//6.png Graphic file (type png)
 <use ./images//6.png>
-Package pdftex.def Info: ./images//6.png  used on input line 449.
+Package pdftex.def Info: ./images//6.png  used on input line 465.
 (pdftex.def)             Requested size: 227.62204pt x 170.41449pt.
  [8]
-<./images//7.png, id=186, 644.4075pt x 596.2275pt>
+<./images//7.png, id=188, 644.4075pt x 596.2275pt>
 File: ./images//7.png Graphic file (type png)
 <use ./images//7.png>
-Package pdftex.def Info: ./images//7.png  used on input line 465.
+Package pdftex.def Info: ./images//7.png  used on input line 481.
 (pdftex.def)             Requested size: 227.62204pt x 210.60236pt.
  [9 </home/ashpex/dev/latex/TTH/./images//6.png> </home/ashpex/dev/latex/TTH/./images//7.png>]
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 484.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 500.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 485.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 501.
 
 [10] (/home/ashpex/dev/latex/TTH/tth.aux)
 Package rerunfilecheck Info: File `tth.out' has not changed.
@@ -929,16 +929,16 @@ Package rerunfilecheck Info: File `tth.out' has not changed.
 Here is how much of TeX's memory you used:
  38262 strings out of 478994
  851728 string characters out of 5864752
- 1422218 words of memory out of 5000000
+ 1423218 words of memory out of 5000000
  55209 multiletter control sequences out of 15000+600000
  429323 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,12n,89p,694b,1090s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on /home/ashpex/dev/latex/TTH/tth.pdf (11 pages, 1239107 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on /home/ashpex/dev/latex/TTH/tth.pdf (11 pages, 1251332 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
+ 265 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  40 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 
