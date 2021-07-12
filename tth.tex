@@ -330,10 +330,46 @@
     \textbf{Đề bài:} Có bao nhiêu cách tổ hợp \(n\) \$ theo các tờ tiền có mệnh giá là 1\$, 5\$ và 10\$. Có quan tâm đến thứ tự của các mệnh giá.
 \end{tcolorbox}
 
+- Gọi \(a_{n}\) là số cách tổ hợp \(n\) \$ theo các tờ tiền có mệnh giá là 1\$, 5\$ và 10\$. Ta có:
+
+\begin{itemize}
+    \item Nếu trong \(n\)\$ có tờ 1\$ \(\Rightarrow\) còn lại \(a_{n-1}\) cách
+    \item Nếu trong \(n\)\$ có tờ 5\$ \(\Rightarrow\) còn lại \(a_{n-5}\) cách
+    \item Nếu trong \(n\)\$ có tờ 10\$ \(\Rightarrow\) còn lại \(a_{n-10}\) cách
+\end{itemize}
+
+- Áp dụng nguyên lý cộng, ta có:
+
+\begin{equation*}
+    a_{n} = a_{n-1} + a_{n-5} + a_{n-10}
+\end{equation*}
+
+- Mà ta lại có:
+
+\begin{itemize}
+    \item \(a_{0} = a_{1} = a_{2} = a_{3} = a_{4} = 1\)
+    \item \(a_{5} = a_{6} = a_{7} = a_{8} = a_{9} = 2\)
+    \item \(a_{10} = 3\)
+\end{itemize}
+
+- Sử dụng Maple để giải hệ thức đệ quy, ta được:
+
+\begin{verbatim}
+    f := rsolve({a(0) = 1, a(1) = 1, a(2) = 1, a(3) = 1, a(4) = 1, a(5) = 2, a(6) = 2, a(7) = 2, a(8) = 2, a(9) = 2, a(10) = 3, a(n) = a(n-1) + a(n-5) + a(n-10)}, a(n)): simplify(f)
+\end{verbatim}
+
+
+
+\begin{equation*}
+    \left(\sum_{\_R = RootOf(\_Z^{10} + \_Z^{5} + \_Z-1)}\frac{(\_R^{9} + \_R^{8} + \_R{7} + \_R^{6} - 2\_R^{5} - 2\_R + 1)(\frac{1}{\_R})^{n}}{10\_R^{10 + 5\_R^{5} + \_R}}\right)
+\end{equation*}
+
 \subsection{Câu C: Dãy con bị cấm}
 \begin{tcolorbox}
     \textbf{Đề bài:} Tìm quan hệ đệ quy cho \(a_{n}\), số chuỗi tam phân có độ dài \(n\) mà không xuất hiện chuỗi con “012”.
 \end{tcolorbox}
+
+- Gọi \(a_{n}\) là số chuỗi tam phân có độ dài \(n\) mà không xuất hiện chuỗi con "012" \\
 
 \section{Bài 3}
 \subparagraph {Sử dụng maple để giải quyết 2 bài toán sau đây:}

@@ -1096,6 +1096,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
@@ -1104,4 +1105,5 @@ INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb
