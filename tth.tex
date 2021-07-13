@@ -11,6 +11,7 @@
 \usepackage[T5]{fontenc}
 \usepackage{fancyhdr}
 \usepackage{geometry}
+\usepackage{amsfonts} 
 
 \usepackage{csquotes}
 \usepackage{listings}
@@ -402,7 +403,7 @@
 \[
     \begin{cases}
         a_{n} & = 3.a_{n-1} + a_{n-3}\\             
-        a_{1} & = 1 \\
+        a_{1} & = 3 \\
         a_{2} & = 9 \\
         a_{3} & = 26 \\
     \end{cases} 
@@ -413,11 +414,11 @@
 
 
 \begin{lstlisting}[breaklines]
-    f := rsolve({a(1) = 1, a(2) = 9, a(3) = 26, a(n) = 3a(n-1) + a(n-3)}, a(n)): simplify(f)
+    f := rsolve({a(1) = 3, a(2) = 9, a(3) = 26, a(n) = 3a(n-1) + a(n-3)}, a(n)): simplify(f)
 \end{lstlisting}
 
 \begin{equation*}
-    \frac{\left(\sum_{\_R = RootOf(\_Z^{3} + 3\_Z - 1)}\frac{(6\_R^{2} + 4\_R  - 1)(\frac{1}{\_R})^{n}}{(\_R^{2} + 1) - \_R}\right)}{3}
+    \frac{\left(\sum_{\_R = RootOf(\_Z^{3} + 3\_Z - 1)}\frac{(6\_R - 1)(\frac{1}{\_R})^{n}}{(\_R^{2} + 1)\_R}\right)}{3}
 \end{equation*}
 
 \section{Bài 3}
@@ -559,12 +560,68 @@
     Đầu tiên cho sinh viên tập trung trong khuôn viên trường là hình vuông cạnh 100m, để đảm bảo an toàn nên các bạn sinh viên đứng cách đều nhau. Lấy một ô đơn vị làm mẫu có kích thước 20m x 20m, ta dự đoán được trong đó có khoảng từ 490 đến 500 sinh viên. Sau đó chúng ta sẽ cho tất cả sinh viên xếp thành các hàng 5,7 và 11. Trong mỗi lần xếp như vậy, số sinh viên dư ra lần lượt là 0,4 và 3. Hãy tính chính xác số lượng sinh viên. (bởi vì dù chỉ 1 người chưa được tầm soát cũng rất nguy hiểm)
 \end{tcolorbox}
 
-- Ta có số sinh viên của ĐH Khoa Học Tự Nhiên trong khoảng như sau:
+- Gọi \(x\) là số lượng sinh viên cần tìm \(x \in \mathbb{N}\) \\
+- Ta có số sinh viên của ĐH Khoa Học Tự Nhiên trong khoảng như sau: \\
 
 \begin{align*}
-    a_{n}   & = a_{n-1} + .a_{n-1} + a_{n-1} + a_{n-3} \\
-            & = 3.a_{n-1} + a_{n-3}
+    \frac{100*100*490}{20*20} & \leq x \leq \frac{100*100*500}{20*20} \\
+    12250                     & \leq x \leq 12500 \text{ (*)}
 \end{align*}
+
+- Ta có hệ phương trình đồng dư:
+\[
+    \begin{cases}
+        x & \equiv 0 \text{ (mod 5)} \\             
+        x & \equiv 4 \text{ (mod 7)} \\
+        x & \equiv 3 \text{ (mod 11)}
+    \end{cases}
+    \]
+
+- Áp dụng định lý thặng dư Trung Hoa:
+\[
+    \begin{cases}
+        M & = 5 * 7 * 11 = 385 \\             
+        M_{1} & = 7 * 11 = 77 \\
+        M_{2} & = 5 * 11 = 55 \\
+        M_{3} & = 5 * 7 = 35 \\
+    \end{cases}
+    \]
+
+- Ta có:
+
+\begin{itemize}
+    \item \(y_{1} = 77^{-1} \text{ (mod 5)} = 2^{-1} \text{ (mod 5)} = 3\)
+    \item \(y_{2} = 55^{-1} \text{ (mod 7)} = 6^{-1} \text{ (mod 7)} = 6\)
+    \item \(y_{3} = 35^{-1} \text{ (mod 11)} = 2^{-1} \text{ (mod 11)} = 6\)
+\end{itemize}
+
+- Khi đó:
+
+\[
+    \begin{cases}
+        x & \equiv 0*77*3 + 4*55*6 + 3*35*6 \text{ (mod 385)} \\             
+        x & \equiv 1950 \text{ (mod 385)} \\
+        x & \equiv 25 \text{ (mod 385)}
+    \end{cases}
+    \]
+- Suy ra \(x\) có dạng :
+
+\begin{equation*}
+    x = 25 + 385k, (k \in \mathbb{N})
+\end{equation*}
+
+- Kết hợp với \((*)\): 
+
+\begin{align*}
+    & 12250                     \leq 25 + 385k \leq 12500 \\
+    & \Leftrightarrow 31,8                       \leq k \leq 32,4 \\
+    & \Rightarrow k  = 32
+\end{align*}
+
+- Vậy số lượng sinh viên cần tìm là:
+\begin{equation*}
+    x = 375 + 385 * 32 = 12345
+\end{equation*}
 
 \end{sloppypar}
 \end{document}
