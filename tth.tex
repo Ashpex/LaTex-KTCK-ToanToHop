@@ -494,6 +494,52 @@
     \textbf{Đề bài:} Hàm euler \(p(n)=\) số các số nguyên từ \(1\) đến \(n\) và nguyên tố cùng nhau với \(n\). Sử dụng nguyên lý bù trừ để tính \(p(n)\) dựa vào phân tích của \(n\) ra thừa số nguyên tố. Áp dụng: tính \(p(100)\).
 \end{tcolorbox}
 
+- Gọi \(U\) là tập hợp các số nguyên dương từ 1 đến \(n\) \(\Rightarrow |U| = n\). \\
+- Ta phân tích \(n\) thành tích các thừa số nguyên tố: \(a_{1}^{k_{1}},a{2}^{k_{2}}, a{3}^{k_{3}}...a_{r}^{k_{r}}\) \\
+\begin{equation*}
+    n = a_{1}^{k_{1}} \times a{2}^{k_{2}} \times a{3}^{k_{3}}... \times a_{r}^{k_{r}}
+\end{equation*}
+
+- Gọi \(A_{i} (1 \leq i \leq r)\) là tập hợp các số nguyên trong \(U\) có ước là \(a_{i} (1 \leq i \leq r)\). \\
+- Theo tính chất của hai số nguyên tố cùng nhau, khi đó \(p(n)\) chính là \(|\overline{A_{1}}.\overline{A_{2}}...\overline{A_{r}}|\) 
+
+\[
+    \begin{cases}
+        |A_{i}| = \frac{n}{a_{i}} \text{ với } 1 \leq i \leq r \\
+        |A_{i}A_{j}| = \frac{n}{a_{i}a_{j}} \text{ với } 1 \leq j \leq r \\
+        ..... \\
+        |A_{1}A_{2}...A_{r}| = \frac{n}{a_{1}a_{2}...a_{r}}
+    \end{cases}
+    \]
+
+- Ta có:
+
+\begin{align*}
+    S_{1} & = \sum_{i=1}^{r}|A_{i}| = n\left(\frac{1}{a_{1}} + \frac{1}{a_{2}} + \frac{1}{a_{3} + ....\frac{1}{a_{n}}}\right) \\
+    S_{2} & = \sum_{1 \leq i < j \leq r}^{r}|A_{i}A_{j}| = n\left(\frac{1}{a_{1}a_{2}} + \frac{1}{a_{1}a_{3}} + .... + \frac{1}{a_{n-1}a_{n}}\right) \\
+    .... \\
+    S_{r} & = |A_{1}A_{2}A_{3}...A_{r}| = n.\frac{1}{a_{1}a_{2}....a_{r}}
+\end{align*}
+
+
+- Áp dụng nguyên lý bù trừ:
+
+\begin{align*}
+    |\overline{A_{1}}\overline{A_{2}}\overline{A_{3}}...\overline{A_{r}}|   & = |U| + \sum_{i=1}^{3}(-1)^{i}S_{i} \\
+    & = n\left(1-\frac{1}{a_{1}}-\frac{1}{a_{2}}-...-\frac{1}{a_{n}} + \frac{1}{a_{1}a_{2}} + \frac{a_{1}a_{3}}+...\frac{1}{a_{n-1}a_{n}}+...+\frac{(-1)^r}{a_{1}a_{2}...a_{r}}\right) \\
+    & = n\left(1-\frac{1}{a_{1}}\right)\left(1-\frac{1}{a_{2}}\right)...\left(1-\frac{1}{a_{r}}\right)
+\end{align*}
+
+\subparagraph{Áp dụng: Tính \(\mathbf{p(100)}\) } \mbox{}\\
+
+- Ta phân tích 100 thành tích các thừa số nguyên tố:
+
+\begin{align*}
+    100 & = 2^{2}\times 2^{5} \\
+    \Rightarrow p(100) & = 100\left(1 - \frac{1}{2}\right)\left(1-\frac{1}{5}\right) \\
+    & = 40
+\end{align*}
+
 \section{Bài 6: Đa thức sắc tố đồ thị(chromatic polynomial)}
 \begin{tcolorbox}
     \textbf{Đề bài:} Cho đồ thị G đơn, vô hướng như hình bên dưới.  Sử dụng nguyên lý bù trừ để tính số cách tô màu 4 đỉnh của đồ thị với  \(n\) màu cho trước sao cho các đỉnh kề nhau được tô bởi các màu khác nhau. ( đỉnh là \(x_{i}\), cạnh là \(e_{i}\) )
