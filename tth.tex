@@ -63,6 +63,9 @@
     {\setlength\itemindent{15pt} \item[-] #1}
 }
 
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -554,6 +557,84 @@
     Chứng minh rằng \(R(x,C’)=x^{n} .R(1/x,C)\). Gợi ý: bt 15/351 quyển Applied Combinatorics.
 \end{tcolorbox}
 
+- Sử dụng định lý với \crule[cyan]{0.3cm}{0.3cm} là ô ở dòng n, cột m:
+\begin{equation*}
+    R_{n,m}(x) = xR_{n-1,m-1}(x) + R(E_{1},x)
+\end{equation*}
+
+- Trong đó, \(E_{1}\) là bàn cờ còn lại sau khi xóa \crule[cyan]{0.3cm}{0.3cm}. \\
+- Tiếp tục sử dụng định lý với \crule[cyan]{0.3cm}{0.3cm} là ô ở dòng \(n\), cột \(m-1\): 
+
+\begin{align*}
+    R_{E_{1},x}(x) & = xR_{n-1,m-1}(x) + R(E_{2},x) \\
+    \Rightarrow R_{n,m}(x) & = 2xR_{n-1,m-1}(x) + R(E_{2},x) 
+\end{align*}
+
+- Trong đó, \(E_{2}\) là bàn cờ còn lại sau khi xóa \crule[cyan]{0.3cm}{0.3cm}. \\
+- Tiếp tục sử dụng định lý với \crule[cyan]{0.3cm}{0.3cm} là các ô còn lại của dòng \(n\), ta được:
+
+\begin{equation*}
+    R_{n,m}(x) = mxR_{n-1,m-1}(x) + R_{n-1,m}(x)
+\end{equation*}
+
+- Tìm đa thức quân xe của bàn cờ \(n\) dòng , \(m\) cột:
+
+\[
+    \begin{cases}
+        r_{0}(n,m) = 1
+        r_{1}(n,m) = nm
+    \end{cases}
+    \]
+
+- Với 2 quân xe ta có \( \begin{pmatrix} n \\ 2 \\ \end{pmatrix} \) cách chọn vị trí dòng đặt quân xe. Với mỗi cách chọn dòng:
+
+\begin{itemize}
+    \item Quân xe thứ nhất có \(m\) cách chọn.
+    \item Quân xe thứ hai có \(m-1\) cách chọn.
+\end{itemize}
+
+- Như vậy,
+
+\begin{align*}
+    r_{2}(n,m)  & = \begin{pmatrix} n \\ 2 \\ \end{pmatrix} \times  m \times (m-1) \\
+                & = \begin{pmatrix} n \\ 2 \\ \end{pmatrix} \times  \frac{m!}{(m-3)!}
+\end{align*}
+
+- Lý luận tương tự, ta có:
+
+\begin{equation*}
+    r_{3}(n,m) = \begin{pmatrix} n \\ 3 \\ \end{pmatrix} \times \frac{m!}{(m-3)!}
+\end{equation*}
+
+- Tổng quát, ta được:
+
+\begin{equation*}
+    r_{k}(n,m) = \begin{pmatrix} n \\ k \\ \end{pmatrix} \times \frac{m!}{(m-k)!}
+\end{equation*}
+
+- Từ đó:
+
+%\begin{equation*}
+%    R_{n,m}(x) = \sum_{k = 0}^{n}  \begin{pmatrix} n \\ k \\ \end{pmatrix}\frac{(m)!}{(m-k)!}x^{k} (*) \\
+%    \Rightarrow \frac{dR_{n,m}(x)}{dx} = \sum_{k = 1}^{n}  \begin{pmatrix} n \\ k \\ \end{pmatrix}\frac{(m)!}{(m-k)!}x^{k-1}
+
+%\end{equation*}
+
+\begin{align*}
+    R_{n,m}(x) & = \sum_{k = 0}^{n} \begin{pmatrix} n \\ k \\ \end{pmatrix}\frac{(m)!}{(m-k)!}x^{k} \\
+    \Rightarrow \frac{dR_{n,m}(x)}{dx} & = \sum_{k = 1}^{n} \begin{pmatrix} n \\ k \\ \end{pmatrix}\frac{(m)!}{(m-k)!}x^{k-1}
+\end{align*}
+
+- Từ (*), ta được:
+
+\begin{align*}
+    R_{n-1,m-1}(x)  & = \sum_{k = 0}^{n-1} \begin{pmatrix} n - 1 \\ k \\ \end{pmatrix}\frac{(m - 1)!}{(m - 1 - k)!}x^{k} \\
+                    & = \sum_{k = 1}^{n} \begin{pmatrix} n - 1 \\ k - 1 \\ \end{pmatrix}\frac{(m - 1)!}{(m-k)!}x^{k-1} \\
+    \Leftrightarrow nmR_{n-1,m-1}(x) & = \sum_{k = 0}^{n - 1}n\begin{pmatrix} n - 1 \\ k - 1 \end{pmatrix}\frac{m \times (m-1)!}{(m-k)!}x^{k-1} \\
+                    & = \sum_{k = 1}^{n}n\begin{pmatrix} n \\ k \end{pmatrix}\frac{m!}{(m-k)!}x^{k-1} \\
+                    & = \frac{dR_{n,m}(x)}{dx}
+\end{align*}
+
 \section{Bài 11: Định lý thặng dư Trung Hoa}
 \begin{tcolorbox}
     \textbf{Đề bài:} Trước khi tiến hành thi học kì, toàn bộ sinh viên đh khtn bắt buộc phải được lấy mẫu tầm soát covid. Để biết chính xác có bao nhiêu sinh viên tham gia, chúng ta làm như sau (nhanh hơn và chính xác hơn việc đếm rất nhiều).
@@ -564,7 +645,7 @@
 - Ta có số sinh viên của ĐH Khoa Học Tự Nhiên trong khoảng như sau: \\
 
 \begin{align*}
-    \frac{100*100*490}{20*20} & \leq x \leq \frac{100*100*500}{20*20} \\
+    \frac{100\times 100\times 490}{20\times 20} & \leq x \leq \frac{100\times 100\times 500}{20\times 20} \\
     12250                     & \leq x \leq 12500 \text{ (*)}
 \end{align*}
 
@@ -580,10 +661,10 @@
 - Áp dụng định lý thặng dư Trung Hoa:
 \[
     \begin{cases}
-        M & = 5 * 7 * 11 = 385 \\             
-        M_{1} & = 7 * 11 = 77 \\
-        M_{2} & = 5 * 11 = 55 \\
-        M_{3} & = 5 * 7 = 35 \\
+        M & = 5 \times 7 \times 11 = 385 \\             
+        M_{1} & = 7 \times 11 = 77 \\
+        M_{2} & = 5 \times 11 = 55 \\
+        M_{3} & = 5 \times 7 = 35 \\
     \end{cases}
     \]
 
@@ -599,7 +680,7 @@
 
 \[
     \begin{cases}
-        x & \equiv 0*77*3 + 4*55*6 + 3*35*6 \text{ (mod 385)} \\             
+        x & \equiv 0\times 77\times 3 + 4\times 55\times 6 + 3\times 35\times 6 \text{ (mod 385)} \\             
         x & \equiv 1950 \text{ (mod 385)} \\
         x & \equiv 25 \text{ (mod 385)}
     \end{cases}
@@ -620,7 +701,7 @@
 
 - Vậy số lượng sinh viên cần tìm là:
 \begin{equation*}
-    x = 375 + 385 * 32 = 12345
+    x = 375 + 385 \times 32 = 12345
 \end{equation*}
 
 \end{sloppypar}
