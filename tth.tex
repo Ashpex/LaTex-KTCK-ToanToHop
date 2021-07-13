@@ -471,16 +471,13 @@
 - Số phân hoạch của 10 là hệ số của \(x^{10}\) trong hàm sinh \(G(x)\). \\
 - Sử dụng Maple, ta có:
 \begin{verbatim}
-> g := 1/product(1-x^i,i=1.10)
+> g := 1/product(1-x^i,i= 1..10)
 > coeff(series(g,x,11),x,10)
 \end{verbatim}
-
-\begin{equation*}
-    g := \frac{1}{1-x^{1.10}}
-\end{equation*}
 \begin{equation*}
     42
 \end{equation*}
+- Vậy số phân hoạch của 10 là 42.
 
 \section{Bài 4}
 \begin{tcolorbox}
@@ -499,7 +496,7 @@
 \end{tcolorbox}
 
 \begin{center}
-    {\includegraphics[width=8cm]{6.png}}
+    {\includegraphics[width=4cm]{ex6.png}}
 \end{center}
 
 \section{Bài 7}
@@ -507,6 +504,24 @@
     \textbf{Đề bài:} Chứng minh rằng số cây khung của đồ thị đầy đủ \(K_{n}\) là \(n^{n-2}\).
     (với \(n > 1\)).
 \end{tcolorbox}
+
+- Theo định nghĩa của chuỗi Prufer:
+
+\begin{center}
+``Một cây \(n\) đỉnh được gán nhãn, có chuỗi Prüfer là một chuỗi với mỗi phần tử là nhãn từ  nhãn của cây, sao cho nó là chuỗi duy nhất để biểu diễn cây.''
+\end{center}
+
+- Ta cần chứng minh độ dài của chuỗi Prüfer là \(n-2\). \\
+- Vậy chuỗi Prüfer cho ta một song ánh giữa hai tập hợp sau:
+
+\begin{itemize}
+    \item Tập hợp các cây \(n\) đỉnh được gắn nhãn                      (1)
+    \item Tập hợp các chuỗi độ dài \(n-2\) với các số từ 1 đến \(n\)    (2)
+\end{itemize}
+
+- Trong đó tập hợp (1) chính là tập hợp các cây khung của một đồ thị đầy đủ \(n\) đỉnh. \\
+- Và tập hợp (2) có lực lượng là \(n^{2}\) (với mỗi phần tử của chuỗi ta chọn được \(n\) số). \\
+\(\Rightarrow\) Theo tính chất của song ánh, ta chứng minh được số cây khung của một đồ thị đầy đủ \(K_{n}\) là \(n^{n-2}\).
 
 \section{Bài 8: Bài toán đường đi tránh vũng nước}
 \begin{tcolorbox}
@@ -520,11 +535,11 @@
 
 \subsection{Câu A}
 \begin{tcolorbox}
-    \textbf{Đề bài:} A)Tìm số đường đi từ O đến A tránh vũng nước S biết mỗi lần đi, chỉ được lên trên 1 đơn vị hoặc qua phải 1 đơn vị.
+    \textbf{Đề bài:} Tìm số đường đi từ O đến A tránh vũng nước S biết mỗi lần đi, chỉ được lên trên 1 đơn vị hoặc qua phải 1 đơn vị.
 \end{tcolorbox}
 \subsection{Câu B}
 \begin{tcolorbox}
-    \textbf{Đề bài:} B)Có nhận xét gì về số đường đi như vậy nếu vũng nước S không tồn tại.
+    \textbf{Đề bài:} Có nhận xét gì về số đường đi như vậy nếu vũng nước S không tồn tại.
 \end{tcolorbox}
 
 \section{Bài 9}
@@ -543,5 +558,13 @@
     \textbf{Đề bài:} Trước khi tiến hành thi học kì, toàn bộ sinh viên đh khtn bắt buộc phải được lấy mẫu tầm soát covid. Để biết chính xác có bao nhiêu sinh viên tham gia, chúng ta làm như sau (nhanh hơn và chính xác hơn việc đếm rất nhiều).
     Đầu tiên cho sinh viên tập trung trong khuôn viên trường là hình vuông cạnh 100m, để đảm bảo an toàn nên các bạn sinh viên đứng cách đều nhau. Lấy một ô đơn vị làm mẫu có kích thước 20m x 20m, ta dự đoán được trong đó có khoảng từ 490 đến 500 sinh viên. Sau đó chúng ta sẽ cho tất cả sinh viên xếp thành các hàng 5,7 và 11. Trong mỗi lần xếp như vậy, số sinh viên dư ra lần lượt là 0,4 và 3. Hãy tính chính xác số lượng sinh viên. (bởi vì dù chỉ 1 người chưa được tầm soát cũng rất nguy hiểm)
 \end{tcolorbox}
+
+- Ta có số sinh viên của ĐH Khoa Học Tự Nhiên trong khoảng như sau:
+
+\begin{align*}
+    a_{n}   & = a_{n-1} + .a_{n-1} + a_{n-1} + a_{n-3} \\
+            & = 3.a_{n-1} + a_{n-3}
+\end{align*}
+
 \end{sloppypar}
 \end{document}
