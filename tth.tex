@@ -20,6 +20,7 @@
 \usepackage{tcolorbox}
 \usepackage{colortbl}
 \usepackage{float}
+\usepackage{caption}
 \usepackage{circuitikz}
 \usepackage{tikz}
 \usepackage{bm}
@@ -545,9 +546,32 @@
     \textbf{Đề bài:} Cho đồ thị G đơn, vô hướng như hình bên dưới.  Sử dụng nguyên lý bù trừ để tính số cách tô màu 4 đỉnh của đồ thị với  \(n\) màu cho trước sao cho các đỉnh kề nhau được tô bởi các màu khác nhau. ( đỉnh là \(x_{i}\), cạnh là \(e_{i}\) )
 \end{tcolorbox}
 
-\begin{center}
-    {\includegraphics[width=4cm]{ex6.png}}
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=4cm]{ex6.png}
+    \captionsetup{labelformat=empty}
+    \caption{\((G)\)}   
+  \end{figure}
+  
+
+- Gọi \(N\) là tập hợp tất cả các cách tô \(n\) màu cho tất cả các đỉnh cho đồ thị \(G\). \\
+- Ta có:
+
+\[
+    \begin{cases}
+       \text{G có 4 đỉnh} & (1)\\
+       \text{Mỗi đỉnh có } n \text{ cách.} & (2)
+    \end{cases}
+    \]
+- Từ (1) và (2), theo nguyên lý nhân, ta suy ra được: \(N = n^{4}\) (\(n\) cách chọn cho mỗi đỉnh). \\
+- Để tránh trường hợp các đỉnh kề nhau được tô cùng một màu:
+
+\begin{itemize}
+    \item Cho mỗi cạnh \(e_{i}\), gọi \(A_{i}\) là tập hợp tất cả các cách tô màu sao cho 2 đỉnh của cạnh \(e_{i}\) có cùng màu.
+    \item Khi đó, \(N(\overline{A_{1}}\overline{A_{2}}\overline{A_{3}}\overline{A_{4}}\overline{A_{5}})\) là số cách tô \(n\) màu cần tìm.
+\end{itemize}
+
+- Khi đó, ta có \(N(A_{i}) = n^{3}\) vì hai đỉnh của cạnh \(e_{i}\) được tô cùng 1 màu và ta có thể tô màu bất kỳ cho 2 đỉnh còn lại
 
 \section{Bài 7}
 \begin{tcolorbox}
@@ -596,6 +620,15 @@
 \begin{tcolorbox}
     \textbf{Đề bài:} Xét bài toán trên, tính số đường đi từ O đến A(n,n) và S là nửa mặt phẳng phía trên OA không kể bờ.
 \end{tcolorbox}
+
+- Tương tự, ta thấy đường đi từ \(O\) đến \(A(m,n)\) là một chuỗi có độ dài \(2n\) với hai ký tự là \(L\) (đi lên) và \(P\)(sang phải), trong đó số lượng mỗi ký tự là \(n\). \\
+- Dễ thấy, số lượng ký tự P (sang phải) của ta luôn phải lớn hơn hoặc bằng số lượng ký tự \(L\) (đi lên). \\
+- Vì nếu \(P < L\) thì ta sẽ chạm phải vũng nước. \\
+- Từ đó, ta dễ dàng suy ra số lượng đường đi từ \(O\) đến \(A\) chính là số Catalan thứ \(n\):
+
+\begin{equation*}
+    C_{n} = \frac{1}{n+1}\begin{pmatrix} 2n \\ n \\ \end{pmatrix}
+\end{equation*}
 
 \section{Bài 10}
 \begin{tcolorbox}
