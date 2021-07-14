@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.7.6)  15 JUL 2021 00:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.7.6)  15 JUL 2021 00:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,32 +943,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 453--454
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 503--505
+Underfull \hbox (badness 10000) in paragraph at lines 506--508
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 526--528
 
  []
 
-<./images//ex6.png, id=191, 233.87375pt x 239.89626pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
+
+ []
+
+[10]
+<./images//ex6.png, id=197, 233.87375pt x 239.89626pt>
 File: ./images//ex6.png Graphic file (type png)
 <use ./images//ex6.png>
-Package pdftex.def Info: ./images//ex6.png  used on input line 556.
+Package pdftex.def Info: ./images//ex6.png  used on input line 579.
 (pdftex.def)             Requested size: 113.81102pt x 116.74121pt.
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
@@ -978,7 +974,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 618--619
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
 
@@ -986,37 +992,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 625--626
 <./images//7.png, id=212, 644.4075pt x 596.2275pt>
 File: ./images//7.png Graphic file (type png)
 <use ./images//7.png>
-Package pdftex.def Info: ./images//7.png  used on input line 666.
+Package pdftex.def Info: ./images//7.png  used on input line 689.
 (pdftex.def)             Requested size: 227.62204pt x 210.60236pt.
- [13 </home/ashpex/dev/latex/TTH/./images//7.png>]
+ [13 </home/ashpex/dev/latex/TTH/./images//7.png>] [14]
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 726.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 750.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 727.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 751.
 
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 814--816
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 838--840
 
  []
 
-[16] [17] (/home/ashpex/dev/latex/TTH/tth.aux)
+[17] [18] (/home/ashpex/dev/latex/TTH/tth.aux)
 Package rerunfilecheck Info: File `tth.out' has not changed.
 (rerunfilecheck)             Checksum: 88DB6AE3DA6F224C696D24CE87AAE87C;3449.
  ) 
 Here is how much of TeX's memory you used:
- 39573 strings out of 478994
- 876588 string characters out of 5864752
+ 39574 strings out of 478994
+ 876595 string characters out of 5864752
  1445694 words of memory out of 5000000
  56486 multiletter control sequences out of 15000+600000
  431374 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,89p,694b,1094s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr6.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/share/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on /home/ashpex/dev/latex/TTH/tth.pdf (18 pages, 974391 bytes).
+Output written on /home/ashpex/dev/latex/TTH/tth.pdf (19 pages, 976092 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 268 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

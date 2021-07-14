@@ -490,10 +490,33 @@
     (với \(i=1,...,n-1\)). Và \(D_{n}\) là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\)
 \end{tcolorbox}
 
+- Gọi \(D_{n}\) là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\) \\
+- Suy ra ta có \(n-1\) cách chọn một phần tử \(x\) thay thế phần tử 1. Trong mỗi lựa chọn có \(2\) trường hợp:
+
+\begin{itemize}
+    \item \textbf{Trường hợp 1:} Thay thế phần tử \(x\) với phần tử 1. Sau đó xáo trộn \(n-2\) phần tử \(\Rightarrow\) có \(D_{n-2}\) cách. 
+    \item \textbf{Trường hợp 2:} Thay thế phần tử \(x\) với một số phần tử khác 1. Ta phải xây dựng một xáo trộn của \(n-1\) phần tử \(\Rightarrow\) có \(D_{n-1}\) cách.
+\end{itemize}
+- Suy ra:
+
+\begin{equation*}
+    D_{n} = (n-1)(D_{n-1} + D_{n-2}) \text{ với } D_{1} = 0, D_{2} = 1
+\end{equation*}
 
 - Gọi \(A_{n}\) là số cách sắp xếp các số nguyên từ 1 đến \(n\) sau cho số nguyên \(i\) không nằm liền sau số nguyên \(i+1\) 
-(với \(i=1,...,n-1\)). \\
-- Gọi \(D_{n}\) là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\)
+(với \(i=1,...,n-1\)): \\
+
+\begin{itemize}
+    \item \textbf{Trường hợp 1:} Sắp xếp số nguyên \(n\) vào vị trí \(k (k = 0,1,2,...n)\) giữa các số thích hợp từ \(1\) tới \(n-1\) \(\Rightarrow\) có \(nA_{n-1}-(A_{n-1}-1)\) cách. Do mỗi lần chèn số nguyên n vào vị trí \(k!=n\) giữa các số thì tồn tại 1 trường hợp không thỏa mãn.
+    \item \textbf{Trường hợp 2:} Sắp xếp số nguyên \(n-1,n\) vào vị trí \(k(k=0,1,2,...n-1)\) giữa các số thích hợp từ 1 tới \(n-2\) \(\Rightarrow\) có \((n-2)A_{n-2}-1\) cách. Do khi ta chèn cặp số \(\overline{(n-1)n}\) thì sẽ có \((n-2)(A_{n-2})\) cách. Mặc khác, khi chèn vào vị trí \(k=n-1\) thí sẽ bị trùng vị trí cuối ở TH1 nên phải loại nó ra.
+\end{itemize}
+- Suy ra:
+\begin{align*}
+    A_{n}   & = nA_{n-1} - (A_{n-1} - 1) + (n-2)(A_{n-2}-1) \\
+            & = (n-1)A_{n-2} + (n-2)A_{n-2} \text{ với } A_{1} = 1, A_{2} = 2 \\
+            & = D_{n} + D_{n-1}
+\end{align*}
+
 
 \section{Bài 5}
 \begin{tcolorbox}
@@ -666,6 +689,11 @@
     {\includegraphics[width=8cm]{7.png}}
 \end{center}
 
+\subsection{Câu A}
+\begin{tcolorbox}
+    \textbf{Đề bài:} Tìm số đường đi từ O đến A tránh vũng nước S biết mỗi lần đi, chỉ được lên trên 1 đơn vị hoặc qua phải 1 đơn vị.
+\end{tcolorbox}
+
 \begin{itemize}
     \item Bắt đầu tại ô \(0,0\). Lần lượt đi từ trái qua phải, từ dưới lên trên và cập nhật giá trị cho các ô đã đi qua theo công thức đệ quy:
     \[ F(i,j) = 
@@ -690,10 +718,6 @@
 
 \(\Rightarrow F_{0,0}\)
 
-\subsection{Câu A}
-\begin{tcolorbox}
-    \textbf{Đề bài:} Tìm số đường đi từ O đến A tránh vũng nước S biết mỗi lần đi, chỉ được lên trên 1 đơn vị hoặc qua phải 1 đơn vị.
-\end{tcolorbox}
 \subsection{Câu B}
 \begin{tcolorbox}
     \textbf{Đề bài:} Có nhận xét gì về số đường đi như vậy nếu vũng nước S không tồn tại.
