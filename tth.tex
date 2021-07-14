@@ -487,8 +487,13 @@
 \section{Bài 4}
 \begin{tcolorbox}
     \textbf{Đề bài:}  Gọi \(A_{n}\) là số cách sắp xếp các số nguyên từ 1 đến \(n\) sau cho số nguyên \(i\) không nằm liền sau số nguyên \(i+1\) 
-    (với \(i=1,...,n-1\)). Và Dn là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\)
+    (với \(i=1,...,n-1\)). Và \(D_{n}\) là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\)
 \end{tcolorbox}
+
+
+- Gọi \(A_{n}\) là số cách sắp xếp các số nguyên từ 1 đến \(n\) sau cho số nguyên \(i\) không nằm liền sau số nguyên \(i+1\) 
+(với \(i=1,...,n-1\)). \\
+- Gọi \(D_{n}\) là số các xáo trộn của tập hợp các số nguyên từ 1 đến \(n\). Chứng minh rằng \(A_{n}= D_{n} + D_{n-1}\)
 
 \section{Bài 5}
 \begin{tcolorbox}
@@ -571,7 +576,61 @@
     \item Khi đó, \(N(\overline{A_{1}}\overline{A_{2}}\overline{A_{3}}\overline{A_{4}}\overline{A_{5}})\) là số cách tô \(n\) màu cần tìm.
 \end{itemize}
 
-- Khi đó, ta có \(N(A_{i}) = n^{3}\) vì hai đỉnh của cạnh \(e_{i}\) được tô cùng 1 màu và ta có thể tô màu bất kỳ cho 2 đỉnh còn lại
+- Theo nguyên lý bù trừ:
+\begin{equation*}
+    (\overline{A_{1}}\overline{A_{2}}\overline{A_{3}}\overline{A_{4}}\overline{A_{5}}) = |N| - S_{1} + S_{2} - S_{3} + S_{4} - S_{5}
+\end{equation*}
+
+\subparagraph{Tính \(S_{1}\)}\mbox{}\\
+
+- Với mỗi cạnh \(e_{i}\), ta có:
+
+\begin{itemize}
+    \item Có \(n\) cách tô \(n\) màu cho hai đỉnh của cạnh \(e_{i}\)
+    \item Có \(n^{2}\) cách tô \(n\) màu cho hai đỉnh còn lại.
+\end{itemize}
+
+\(\Rightarrow S_{1} = 5n^{3}\) (có tổng cộng 5 cạnh) 
+
+\subparagraph{Tính \(S_{2}\)}\mbox{}\\
+
+- Với mỗi hai cạnh \(e_{i}\) và \(e_{j}\), ta có:
+\begin{itemize}
+    \item Có \(n\) cách tô màu cho 3 đỉnh được nối bởi hai cạnh \(e_{i}\) và \(e_{j}\).
+    \item Có \(n\) cách tô màu cho đỉnh còn lại.
+\end{itemize}
+
+\(\Rightarrow S_{2} =  \begin{pmatrix} 5 \\ 2 \\ \end{pmatrix}n^{2}\) (chọn 2 cạnh trong 5 cạnh) 
+
+
+\subparagraph{Tính \(S_{3}\)}\mbox{}\\
+
+- Với \(S_{3} = |A_{i}A_{j}{A_{k}}|\)
+\begin{itemize}
+    \item Với \((i,j,k) = (1,2,3)\), có \(n^{2}\) cách tô màu.
+    \item Với \((i,j,k) = (3,4,5)\), có \(n^{2}\) cách tô màu.
+    \item Với \((i,j,k) != (1,2,3) != (3,4,5)\), có \(n\) cách tô màu.
+\end{itemize}
+
+\(\Rightarrow S_{2} = 2n^{2}\left[\begin{pmatrix} 5 \\ 3 \\ \end{pmatrix} - 2\right] = 2n^{2} + 8n\)
+
+
+\subparagraph{Tính \(S_{4}\) và \(S_{5}\)}\mbox{}\\
+
+- Với 4 hay 5 cạnh, ta có:
+\begin{itemize}
+    \item Có \(n\) cách tô màu cho 4 đỉnh được nối bởi 4 hoặc 5 cạnh.
+\end{itemize}
+
+\(\Rightarrow S_{2} =  \begin{pmatrix} 5 \\ 4 \\ \end{pmatrix}n\) (chọn 4 cạnh trong 5 cạnh) \\
+
+- Theo nguyên lý bù trừ:
+\begin{align*}
+    (\overline{A_{1}}\overline{A_{2}}\overline{A_{3}}\overline{A_{4}}\overline{A_{5}}) & = |N| - S_{1} + S_{2} - S_{3} + S_{4} - S_{5} \\
+    & = n^{4} - 5n^{3} + \begin{pmatrix} 5 \\ 2 \\ \end{pmatrix}n^{2} - (2n^{2} + 8n) + \begin{pmatrix} 5 \\ 4 \\ \end{pmatrix}n-n \\
+    & = n^{4} - 5n^{3} + 10n^{2} - (2n^{2} + 8n) + 5n -n \\
+    & = n^{4} - 5n^{3} + 8n^{2} - 4n
+\end{align*}
 
 \section{Bài 7}
 \begin{tcolorbox}
@@ -607,6 +666,30 @@
     {\includegraphics[width=8cm]{7.png}}
 \end{center}
 
+\begin{itemize}
+    \item Bắt đầu tại ô \(0,0\). Lần lượt đi từ trái qua phải, từ dưới lên trên và cập nhật giá trị cho các ô đã đi qua theo công thức đệ quy:
+    \[ F(i,j) = 
+    \begin{cases}
+        1     & , (i,j) = (0,0) \\
+        0     &, ij < 0 \\
+        F(i + 1,j) + F(i, j + 1) 
+    \end{cases}
+    \]
+    \item Lặp lại đến khi gán xong giá trị cho ô \(n,m\).
+    \item Kết quả số đường đi từ \(O\) tới \(A\) là giá trị tại ô \(n,m\)
+\end{itemize}
+
+\subparagraph{Thuật toán}
+\begin{verbatim}
+    for(i =  0 -> m): F(i,n) = 1)
+    for(j = 0 -> n - 1): F(m,j) = 1
+    for(i = m - 1 -> 0; j = n - 1 -> 0):
+        if(i,j) in S: F(i,j) = 0
+        if (i,j) not in S: F(i,j) = F(i+1,j) + F(i,j+1)
+\end{verbatim}
+
+\(\Rightarrow F_{0,0}\)
+
 \subsection{Câu A}
 \begin{tcolorbox}
     \textbf{Đề bài:} Tìm số đường đi từ O đến A tránh vũng nước S biết mỗi lần đi, chỉ được lên trên 1 đơn vị hoặc qua phải 1 đơn vị.
@@ -616,6 +699,14 @@
     \textbf{Đề bài:} Có nhận xét gì về số đường đi như vậy nếu vũng nước S không tồn tại.
 \end{tcolorbox}
 
+- Ta ký hiệu đường đi từ \(O\) đến \(A(m,n)\) với hai ký tự là \(L\) (lên trên) và \(P\)(qua phải). \\
+- Dễ dàng nhận ra để di chuyển từ \(O\) đến \(A(m,n)\) luôn luôn cần \(m+n\) bước. \\
+- Suy ra, số lượng ký tự \(P\) là \(m\) và số lượng ký tự \(L\) là \(n\). \\
+- Dễ nhận thấy đổi chỗ các ký tự không làm thay đổi chuỗi. Vì vậy số đường đi của bài toán sẽ là số cách chọn \(m+n\) ký tự từ \(m\) ký tự \(P\) và \(n\) ký tự \(L\). Số cách chọn:
+
+\begin{equation*}
+    \begin{pmatrix} m + n \\ n \\ \end{pmatrix} = \begin{pmatrix} m + n \\ m \\ \end{pmatrix}
+\end{equation*}
 \section{Bài 9}
 \begin{tcolorbox}
     \textbf{Đề bài:} Xét bài toán trên, tính số đường đi từ O đến A(n,n) và S là nửa mặt phẳng phía trên OA không kể bờ.
@@ -624,7 +715,7 @@
 - Tương tự, ta thấy đường đi từ \(O\) đến \(A(m,n)\) là một chuỗi có độ dài \(2n\) với hai ký tự là \(L\) (đi lên) và \(P\)(sang phải), trong đó số lượng mỗi ký tự là \(n\). \\
 - Dễ thấy, số lượng ký tự P (sang phải) của ta luôn phải lớn hơn hoặc bằng số lượng ký tự \(L\) (đi lên). \\
 - Vì nếu \(P < L\) thì ta sẽ chạm phải vũng nước. \\
-- Từ đó, ta dễ dàng suy ra số lượng đường đi từ \(O\) đến \(A\) chính là số Catalan thứ \(n\):
+- Từ đó, ta dễ dàng suy ra số lượng bước đi từ \(O\) đến \(A\) chính là số Catalan thứ \(n\):
 
 \begin{equation*}
     C_{n} = \frac{1}{n+1}\begin{pmatrix} 2n \\ n \\ \end{pmatrix}
