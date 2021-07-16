@@ -498,7 +498,7 @@
 (với \(i=1,...,n-1\)): \\
 
 \begin{itemize}
-    \item \textbf{Trường hợp 1:} Sắp xếp số nguyên \(n\) vào vị trí \(k (k = 0,1,2,...n)\) giữa các số thích hợp từ \(1\) tới \(n-1\) \(\Rightarrow\) có \(nA_{n-1}-(A_{n-1}-1)\) cách. Do mỗi lần chèn số nguyên n vào vị trí \(k!=n\) giữa các số thì tồn tại 1 trường hợp không thỏa mãn.
+    \item \textbf{Trường hợp 1:} Sắp xếp số nguyên \(n\) vào vị trí \(k (k = 0,1,2,...n)\) giữa các số thích hợp từ \(1\) tới \(n-1\) \(\Rightarrow\) có \(nA_{n-1}-(A_{n-1}-1)\) cách. Do mỗi lần chèn số nguyên n vào vị trí \(k \neq n\) giữa các số thì tồn tại 1 trường hợp không thỏa mãn.
     \item \textbf{Trường hợp 2:} Sắp xếp số nguyên \(n-1,n\) vào vị trí \(k(k=0,1,2,...n-1)\) giữa các số thích hợp từ 1 tới \(n-2\) \(\Rightarrow\) có \((n-2)A_{n-2}-1\) cách. Do khi ta chèn cặp số \(\overline{(n-1)n}\) thì sẽ có \((n-2)(A_{n-2})\) cách. Mặc khác, khi chèn vào vị trí \(k=n-1\) thí sẽ bị trùng vị trí cuối ở TH1 nên phải loại nó ra.
 \end{itemize}
 - Suy ra:
@@ -623,7 +623,7 @@
 \begin{itemize}
     \item Với \((i,j,k) = (1,2,3)\), có \(n^{2}\) cách tô màu.
     \item Với \((i,j,k) = (3,4,5)\), có \(n^{2}\) cách tô màu.
-    \item Với \((i,j,k) != (1,2,3) != (3,4,5)\), có \(n\) cách tô màu.
+    \item Với \((i,j,k) \neq (1,2,3) \neq (3,4,5)\), có \(n\) cách tô màu.
 \end{itemize}
 
 \(\Rightarrow S_{2} = 2n^{2}\left[\begin{pmatrix} 5 \\ 3 \\ \end{pmatrix} - 2\right] = 2n^{2} + 8n\)
